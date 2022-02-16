@@ -1,0 +1,30 @@
+// Extra small devices (landscape phones, 200px and up)
+@media (max-width: 575.98px) {
+  @include main-container-80;
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (max-width: 767.98px) {
+  @include main-container-80;
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) {
+  @include main-container-80;
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  @include main-container-80;
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .mainContainer {
+    position: absolute;
+    @include position-absolute;
+    @include width-50;
+    top: 30%;
+    left: 25%;
+  }
+}

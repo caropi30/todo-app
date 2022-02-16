@@ -1,0 +1,5 @@
+#btnClearCompletedTasks {
+  @include btn-transparent;
+  @include btnTxt;
+  color: $btnTxtColor;
+}

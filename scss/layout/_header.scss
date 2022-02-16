@@ -1,0 +1,49 @@
+// Extra small devices (landscape phones, 200px and up)
+@media (min-width: 200px) and (max-width: 575.98px) {
+  header {
+    background-image: url("../../images/bg-mobile-light.jpg");
+    @include bg-size-cover;
+    @include height-50vh;
+    @include position-relative;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767.98px) {
+  header {
+    background-image: url("../../images/bg-desktop-light.jpg");
+    @include bg-size-cover;
+    @include height-50vh;
+    @include position-relative;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) {
+  header {
+    background-image: url("../../images/bg-desktop-light.jpg");
+    @include bg-size-cover;
+    @include height-50vh;
+    @include position-relative;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  header {
+    background-image: url("../../images/bg-desktop-light.jpg");
+    @include height-50vh;
+    @include bg-size-cover;
+    @include position-relative;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  header {
+    background-image: url("../../images/bg-desktop-light.jpg");
+    @include bg-size-cover;
+    @include height-50vh;
+    @include position-relative;
+  }
+}

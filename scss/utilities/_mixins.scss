@@ -1,0 +1,64 @@
+@mixin width-100 {
+  width: 100%;
+}
+
+@mixin width-80 {
+  width: 80%;
+}
+
+@mixin width-50 {
+  width: 50%;
+}
+
+@mixin bg-dark {
+  background-color: $dark;
+}
+
+@mixin bg-light {
+  background-color: $light;
+}
+
+@mixin bg-size-cover {
+  background-size: cover;
+}
+
+@mixin height-50vh {
+  height: 50vh;
+}
+
+@mixin position-relative {
+  position: relative;
+}
+
+@mixin position-absolute {
+  position: absolute;
+}
+
+@mixin btn-transparent {
+  border: none;
+  background-color: transparent;
+}
+
+@mixin btnTxt {
+  font-weight: $bold;
+  font-size: $extra-small;
+}
+
+@mixin title-txt {
+  .title {
+    display: flex;
+    color: $lighter;
+    font-weight: $bold;
+  }
+}
+
+@mixin main-container-80 {
+  .mainContainer {
+    position: absolute;
+    @include position-absolute;
+    @include width-50;
+    top: 27%;
+    left: 10%;
+    @include width-80;
+  }
+}
