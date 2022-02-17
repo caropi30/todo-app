@@ -10,7 +10,7 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
-    <title>Frontend Mentor | Todo app</title>
+    <title>Todo app</title>
     <!--Styles-->
     <link rel="stylesheet" type="text/css" href="css/main.css" />
     <link
@@ -28,12 +28,7 @@
     />
   </head>
   <body>
-    <header>
-      <!-- Etiqueta ejemplo de como incorporar una imagen correctamente
-    <figure>
-      <img src="images/bg-desktop-dark.jpg" alt="Tema Oscuro Desktop">
-    </figure>-->
-    </header>
+    <header></header>
     <main class="container">
       <div class="mainContainer">
         <section class="title">
@@ -63,25 +58,7 @@
 
         <section tasks>
           <div class="card m-2">
-            <ul class="list-group list-group-flush p-2">
-              <li class="list-group-item d-flex justify-content-between">
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    id="task"
-                    name="task"
-                    value="task"
-                  />
-                  <label class="form-check-label" for="task"> Tarea </label>
-                </div>
-                <button id="btnCrossover">
-                  <figure class="list-crossover-img">
-                    <img src="images/icon-cross.svg" alt="Eliminar tarea" />
-                  </figure>
-                </button>
-              </li>
-            </ul>
+            <ul id="taskUl" class="list-group list-group-flush p-2"></ul>
 
             <div
               class="card-footer tasks-Footer d-flex justify-content-between align-items-baseline"
@@ -104,7 +81,7 @@
       </div>
     </main>
 
-    <script src="js/main.js"></script>
+    <script src="js/script.js"></script>
     <!--Popper  Bootstrap-->
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
