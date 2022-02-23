@@ -5,6 +5,10 @@ let btnClearCompletedTasks = document.querySelector("#btnClearCompletedTasks");
 let taskUl = document.querySelector('#taskUl');
 var taskList = [];
 let taskLi = document.querySelector('#taskLi');
+let btnDeleteTask = document.querySelector('#btnDeleteTask');
+
+
+//CREACIÓN DE TAREA
 
 function savingTask() {
   console.log(taskInput.value);
@@ -23,10 +27,9 @@ function tasksArr() {
   }
 }
 
-
 function writeTaskInDom() {
+  taskUl.innerHTML = '';
   for (let i = 0; i < taskList.length; i++) {
-    //taskUl.innerHTML = '';
     taskUl.insertAdjacentHTML('afterbegin',
       ` <li id="taskLi" class="list-group-item d-flex justify-content-between">
           <div class="form-check">
@@ -39,7 +42,7 @@ function writeTaskInDom() {
             />
             ${taskList[i]}
           </div>
-          <button id="btnCrossover">
+          <button class="btnDeleteTask">
             <figure class="list-crossover-img">
               <img src="images/icon-cross.svg" alt="Eliminar tarea" />
             </figure>
@@ -58,3 +61,16 @@ btnSaveTask.addEventListener("click", function (event) {
 });
 
 
+/*ELIMINAR TAREA
+
+function deleteTask() {
+  console.log(taskList.pop());
+  return taskList;
+}
+
+
+btnDeleteTask.addEventListener('click', function (event) {
+  event.preventDefault();
+  deleteTask();
+});
+*/
