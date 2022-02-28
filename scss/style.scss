@@ -15,12 +15,12 @@
 @import "components/inputs/checkbox";
 @import "components/counter/counter";
 
-/*/Layout Folder*/
+/*Layout Folder*/
 @import "layout/taskList";
 @import "layout/header";
 @import "layout/title";
 @import "layout/main";
+@import "layout/taskCompleted";
 
 /*Themes Folder*/
-@import "themes/lightTheme";
 @import "themes/darkTheme";

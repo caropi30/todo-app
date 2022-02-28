@@ -4,7 +4,7 @@ let btnSaveTask = document.querySelector("#btnSave");
 let btnClearCompletedTasks = document.querySelector("#btnClearCompletedTasks");
 let taskUl = document.querySelector('#taskUl');
 var taskList = [];
-let taskLi = document.querySelector('#taskLi');
+let taskLi = document.querySelector('.taskLi');
 let btnDeleteTask = document.querySelector('#btnDeleteTask');
 
 
@@ -20,27 +20,39 @@ function savingTask() {
   }
 }
 
-function tasksArr() {
-  if (taskInput !== "") {
-    taskList.push(taskInput.value);
-    console.log(taskList);
-  }
+function randomId(inferior, superior) {
+  var numPosibilidades = superior - inferior;
+  var aleatorio = Math.random() * (numPosibilidades + 1);
+  aleatorio = Math.floor(aleatorio);
+  return inferior + aleatorio;
 }
+
+function tasksArr(task) {
+  if (taskInput !== "") {
+    var newTask = {
+      id: randomId(0, 99999999),
+      text: taskInput.value,
+    };
+  }
+  taskList.push(newTask);
+  console.log(taskList);
+}
+
 
 function writeTaskInDom() {
   taskUl.innerHTML = '';
   for (let i = 0; i < taskList.length; i++) {
     taskUl.insertAdjacentHTML('afterbegin',
-      ` <li id="taskLi" class="list-group-item d-flex justify-content-between">
+      ` <li id="${taskList[i].id}" class="list-group-item d-flex justify-content-between taskLi">
           <div class="form-check">
             <input
-              id="completedTask"
+              id="${taskList[i].id}"
               class="form-check-input"
-              type="radio"
+              type="checkbox"
               name="completedTask"
-              value="completedTask"
+              value="completed"
             />
-            ${taskList[i]}
+            <label for="${taskList[i].id}">${taskList[i].text}</label>
           </div>
           <button class="btnDeleteTask">
             <figure class="list-crossover-img">
@@ -50,6 +62,7 @@ function writeTaskInDom() {
         </li>`
     )
   }
+
 }
 
 btnSaveTask.addEventListener("click", function (event) {
@@ -61,16 +74,29 @@ btnSaveTask.addEventListener("click", function (event) {
 });
 
 
-/*ELIMINAR TAREA
+//TACHAR TAREA
+function crossOutTask() {
+  let completedTask = document.querySelector("input[name=completedTask]:checked");
+  let taskLiParagrapgh = document.querySelector(".taskLi p");
 
-function deleteTask() {
-  console.log(taskList.pop());
-  return taskList;
+  completedTask.addEventListener("click", function (task) {
+    if (completedTask.value === checked) {
+      taskList.forEach(element => {
+        taskLiParagrapgh.setAttribute('done', task.class);
+      }
+      )
+    }
+  })
 }
 
 
-btnDeleteTask.addEventListener('click', function (event) {
-  event.preventDefault();
-  deleteTask();
-});
-*/
+
+
+
+
+
+
+//CAMBIAR TEMA
+
+
+
