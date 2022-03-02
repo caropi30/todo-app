@@ -126,7 +126,7 @@ function changeTheme() {
     main.setAttribute("class", "dark-main");
     header.setAttribute("class", "dark-header");
   }
-  else {
+  else if (body.style.backgroundColor === "#2c3e50" && taskInput.style.backgroundColor === "#2c3e50" && header.style.backgroundColor === "#2c3e50") {
     body.removeAttribute("dark");
     main.removeAttribute("dark-main");
     header.removeAttribute("dark-header");
