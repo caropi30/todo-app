@@ -87,8 +87,6 @@ btnSaveTask.addEventListener("click", function (event) {
 
 
 //ELIMINAR TAREA: este bloque contendrá dos funciones
-//Si la lógica me dice que para eliminar un nodo debo acceder al padre para elminarlo por ser su hijo directo, entonces debo ingresar al padre taskUL para así a través del randomId seleccionar el hijo indicado (taskLi) y asi poder ejecutar su eliminación.
-
 //Esta función permite añadir el listener a cada btnDeleteTask para así poder eliminar la tarea
 
 function addDeleteListener() {
@@ -99,7 +97,7 @@ function addDeleteListener() {
   }
 }
 
-//Esta función me permitirá eliminar la tarea rigiéndome por la lógica de parent.removeChild() === remove()
+//Esta función me permitirá eliminar la tarea y renderizar la lista de tareas en el DOM nuevamete con el listado filtrado
 
 function deleteTask(task) {
   const taskId = task.parentElement.getAttribute("id");
