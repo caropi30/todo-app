@@ -12,6 +12,7 @@
 
 @mixin bg-dark {
   background-color: $dark;
+  color: $lighter;
 }
 
 @mixin bg-light {

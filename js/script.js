@@ -5,7 +5,9 @@ let btnClearCompletedTasks = document.querySelector("#btnClearCompletedTasks");
 let taskUl = document.querySelector('#taskUl');
 var tasksList = [];
 let taskLi = document.querySelector('.taskLi');
-
+let body = document.querySelector("body");
+let main = document.querySelector("main");
+let header = document.querySelector("header");
 
 
 //CREACIÓN DE TAREA
@@ -116,5 +118,24 @@ btnClearCompletedTasks.addEventListener("click", () => {
 });
 
 
+//CAMBIO DE THEME
 
+function changeTheme() {
+  if (body.style.backgroundColor === '' && taskInput.style.backgroundColor === '' && header.style.backgroundColor === '') {
+    body.setAttribute("class", "dark");
+    main.setAttribute("class", "dark-main");
+    header.setAttribute("class", "dark-header");
+  }
+  else {
+    body.removeAttribute("dark");
+    main.removeAttribute("dark-main");
+    header.removeAttribute("dark-header");
+  }
+}
+
+
+btnThemeChange.addEventListener('click', function (e) {
+  e.preventDefault();
+  changeTheme()
+})
 
