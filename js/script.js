@@ -5,7 +5,7 @@ let btnClearCompletedTasks = document.querySelector("#btnClearCompletedTasks");
 let taskUl = document.querySelector('#taskUl');
 var tasksList = [];
 let taskLi = document.querySelector('.taskLi');
-let btnDeleteTask = document.querySelector('.btnDeleteTask');
+
 
 
 //CREACIÓN DE TAREA
@@ -70,6 +70,9 @@ function writeTaskInDom() {
     )
   }
 
+  // Acá se agrega el lsitener del botón btnDeleteTask por cada renderizado de la lista
+  addDeleteListener();
+
 }
 
 
@@ -84,42 +87,36 @@ btnSaveTask.addEventListener("click", function (event) {
 
 
 //ELIMINAR TAREA: este bloque contendrá dos funciones
+//Si la lógica me dice que para eliminar un nodo debo acceder al padre para elminarlo por ser su hijo directo, entonces debo ingresar al padre taskUL para así a través del randomId seleccionar el hijo indicado (taskLi) y asi poder ejecutar su eliminación.
 
-//1. La funcion que permite eliminar el listener de cada tarea agregada que luego será añadida una vez que la lista se vuelva a renderizar.
-function deleteTask() {
-  btnDeleteTaskforEach((task) => {
-    task.addEventListener("click", function () {
-      deleteTask();
-    })
-  })
+//Esta función permite añadir el listener a cada btnDeleteTask para así poder eliminar la tarea
+
+function addDeleteListener() {
+  let btnDeleteTask = document.querySelectorAll('.btnDeleteTask');
+  console.log(`se agrego una nueva tarea ${btnDeleteTask}`);
+  for (let i = 0; i < btnDeleteTask.length; i++) {
+    btnDeleteTask[i].addEventListener('click', () => { deleteTask(btnDeleteTask[i]) });
+  }
 }
 
-// 2. Esta función permitirá leer recorrer el array de lista de tareas para validar el id a través de un filter y así poder eliminar cada tarea, luego en su interior hace el llamado de la funcion que renderiza la tarea en el DOM
+//Esta función me permitirá eliminar la tarea rigiéndome por la lógica de parent.removeChild() === remove()
 
-function deleteTask() {
+function deleteTask(task) {
   const taskId = task.parentElement.getAttribute("id");
-  taskId.filter((task) => task.id !== Number(taskId));
+  tasksList = tasksList.filter((task) => task.id !== Number(taskId));
+
+  writeTaskInDom();
+  addDeleteListener();
 }
 
 
-//TACHAR TAREA
-function crossOutTask() {
-  let completedTask = document.querySelector("input[name=completedTask]:checked");
-  let taskLiParagrapgh = document.querySelector(".taskLi p");
+//VACIAR LISTA 
 
-  completedTask.addEventListener("click", function (task) {
-    if (completedTask.value === checked) {
-      taskList.forEach(element => {
-        taskLiParagrapgh.setAttribute('done', task.class);
-      }
-      )
-    }
-  })
-}
+btnClearCompletedTasks.addEventListener("click", () => {
+  taskUl.innerHTML = "";
+  tasksList = [];
+});
 
-
-
-//CAMBIAR TEMA
 
 
 
