@@ -120,7 +120,7 @@ btnClearCompletedTasks.addEventListener("click", () => {
 
 //CAMBIO DE THEME
 
-function changeTheme() {
+/*function changeTheme() {
   if (body.style.backgroundColor === '' && taskInput.style.backgroundColor === '' && header.style.backgroundColor === '') {
     body.setAttribute("class", "dark");
     main.setAttribute("class", "dark-main");
@@ -138,4 +138,4 @@ btnThemeChange.addEventListener('click', function (e) {
   e.preventDefault();
   changeTheme()
 })
-
+*/
