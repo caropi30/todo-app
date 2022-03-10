@@ -2,9 +2,7 @@
 
 ## Hola Amig@! 👋
 
-Este es un proyecto que desarrolle siguiendo las pautas del templte descragado de la plataforma Frontedn Mentor.
-
-**To do this challenge, you need a good understanding of HTML, CSS and JavaScript.**
+Este es un proyecto que desarrolle siguiendo las pautas del template descargado de la plataforma Frontend Mentor.
 
 ## El Reto
 
